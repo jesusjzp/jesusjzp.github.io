@@ -1,0 +1,79 @@
+<html>
+
+<script>
+(function() {
+  /**
+   * redirect
+   */
+  if (location.href.indexOf('jesusjzp') !== -1) {
+    location.href = location.href.replace('jesusjzp', 'zp-j');
+  }
+})();
+</script>
+
+<style>
+  body {
+    background-color: rgb(32, 103, 178);
+    width: 850px;
+    margin-top: 180px;
+  }
+  #head {
+    font-size: 75px;
+    line-height: 0.2;
+  }
+  footer {
+    display: none;
+  }
+</style>
+
+<body scroll="no" id="404">
+
+  <font size="4" color="#FFFFFF">
+    <p id="head">404 :(</p>
+
+    <p>Ooooops, a problem has been detected.</p>
+
+    <p>REQUEST_PAGE_NOT_FOUND_IN_THIS_BLOG</p>
+
+    <p>Sorry about that, this blog has been refactored with new web development techniques, some articles indexed with deprecated URLs by Google, Baide or some other search engines. </p>
+
+    <p>In <span id="timer">30</span> seconds, you will be redirected to <a href="http://zp-j.github.io/archives">http://zp-j.github.io/archives</a> ...</p>
+
+    <p>Technical information:</p>
+
+    <p>*** STOP: 0x00000001 (0x00000002, 0x00000003, 0x00000004, 0x00000005)</p>
+
+  </font>
+</body>
+
+<script>
+  (function() {
+    
+    /**
+     * timer
+     */
+    var timerDom = document.getElementById('timer');
+    var count = 30;
+    var timer = setInterval(function() {
+      timerDom.textContent = (count--);
+      if (count === 0) {
+        clearInterval(timer);
+        location.href = "/archives"
+      }
+    }, 1000);
+
+    /**
+     * for geeks
+     */
+    var str = "    .---.     .----.       .---.\n\
+   / .  |    /  ..  \\     / .  |\n\
+  / /|  |   .  /  \\  .   / /|  |\n\
+ / / |  |_  |  |  '  |  / / |  |_\n\
+/  '-'    | '  \\  /  ' /  '-'    |\n\
+`----|  |-'  \\  `'  /  `----|  |-'\n\
+     `--'     `---''        `--'"
+    console.log(str);
+  })();
+</script>
+
+</html>
